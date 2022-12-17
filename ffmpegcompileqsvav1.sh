@@ -48,7 +48,7 @@ mkdir -p aom_build && \
 cd aom_build && \
 PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_TESTS=OFF -DENABLE_NASM=on ../aom && \
 PATH="$HOME/bin:$PATH" make && \
-make install
+make install -j4
 
 wait
 
@@ -58,7 +58,7 @@ mkdir -p SVT-AV1/build && \
 cd SVT-AV1/build && \
 PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEC=OFF -DBUILD_SHARED_LIBS=OFF .. && \
 PATH="$HOME/bin:$PATH" make && \
-make install
+make install -j4
 
 wait
 
@@ -91,6 +91,6 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
   --enable-libx265 \
   --enable-nonfree && \
 PATH="$HOME/bin:$PATH" make && \
-make install && \
+make install -j4 && \
 hash -r
 
