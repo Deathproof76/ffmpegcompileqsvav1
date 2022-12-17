@@ -38,7 +38,7 @@ sudo apt-get update -qq && sudo apt-get -y install \
   libaom-dev 
   
 
-&& mkdir -p ~/ffmpeg_sources ~/bin
+mkdir -p ~/ffmpeg_sources ~/bin
 
 wait
 
